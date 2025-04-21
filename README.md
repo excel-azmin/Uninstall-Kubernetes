@@ -55,6 +55,18 @@ sudo yum remove -y kubeadm kubectl kubelet kubernetes-cni kube*
 Remove any leftover Kubernetes configuration files:
 
 ```
+
+sudo rm -f $(which kubectl)
+sudo rm -f $(which kubeadm)
+sudo rm -f $(which kubelet)
+
+sudo rm -rf $(which docker)
+sudo rm -rf $(which containerd)
+
+sudo rm -rf /var/lib/docker
+sudo rm -rf /var/lib/containerd
+
+
 sudo rm -rf ~/.kube
 sudo rm -rf /etc/kubernetes
 sudo rm -rf /etc/systemd/system/kubelet.service.d
